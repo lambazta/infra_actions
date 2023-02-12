@@ -8,7 +8,6 @@ on: [push]
 jobs:
   tests:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 
@@ -37,7 +36,7 @@ jobs:
 
 # Сразу после них добавьте новую задачу: деплой приложения
 
-  build:
+  build_and_push_to_docker_hub:
     runs-on: ubuntu-latest
     needs: tests
     steps:
